@@ -268,13 +268,58 @@ footer hr {
   margin-bottom: 1rem;
 }
 
-/* RESPONSIVO */
 @media screen and (max-width: 768px) {
+  /* Topo empilha vertical e com espaçamento */
+  #Topo {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+
+  /* Escola técnica fica estático, centralizado e com padding */
+  .escola-tecnica {
+    position: static;
+    float: none;
+    margin: 1rem auto;
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  /* Miolo flexível para caber na tela */
+  .Miolo {
+    width: 100%;
+    max-width: 56rem; /* 896px */
+    margin: 0 auto;
+  }
+
+  /* Logo adapta largura e altura */
+  .logo-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fundo cadastro com altura e tamanho de imagem menores */
+  .fundo-cadastro::before {
+    height: 10%;
+    background-size: 100px auto;
+  }
+
+  /* Caixa com padding menor */
+  .caixa {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Linhas em coluna */
   .linha {
     flex-direction: column;
     gap: 1rem;
   }
 
+  /* Colunas ficam 100% largura */
   .coluna,
   .coluna.grande,
   .coluna.media,
@@ -282,6 +327,7 @@ footer hr {
     width: 100%;
   }
 
+  /* Textos do cabeçalho menor */
   .cabecalho-interno h1 {
     font-size: 1.6rem;
   }
@@ -290,16 +336,15 @@ footer hr {
     font-size: 1.1rem;
   }
 
-  .logo-wrapper img {
-    height: 45px;
-  }
-
+  /* Botão candidato menor */
   .botao-candidato {
     font-size: 0.95rem;
     padding: 0.4rem 1rem;
   }
 
-  .caixa {
-    padding: 2rem 1.5rem;
-}
+  /* Rodapé com alinhamento central */
+  .inicio {
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
 }
