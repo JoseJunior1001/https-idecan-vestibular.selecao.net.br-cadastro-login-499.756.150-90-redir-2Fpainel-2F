@@ -400,6 +400,31 @@
 </div>
     <p style="margin-bottom: 15px; font-size: 12px;">© ESCOLA TÉCNICA - ETEC</p>
   </footer>
+
+  <script>
+    // Espera a página carregar completamente
+    window.addEventListener('DOMContentLoaded', function () {
+      const cpf = document.getElementById('cpf');
+
+      cpf.addEventListener('input', function () {
+        let valor = cpf.value;
+        valor = valor.replace(/\D/g, '');
+
+        if (valor.length > 3) {
+          valor = valor.replace(/^(\d{3})(\d)/, '$1.$2');
+        }
+        if (valor.length > 6) {
+          valor = valor.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+        }
+        if (valor.length > 9) {
+          valor = valor.replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
+        }
+
+        cpf.value = valor;
+      });
+    });
+  </script>
+  
   <script>
     document.addEventListener("DOMContentLoaded", function() {
     const estadoSelect = document.getElementById("estado");
