@@ -260,7 +260,7 @@
           </div>
           <div class="coluna">
             <label for="cpf_do_representante_legal">CPF do Representante Legal:</label>
-            <input type="text" id="cpf_do_representante_legal" name="cpf_do_representante_legal" />
+            <input type="text" id="cpf" name="cpf_do_representante_legal" />
           </div>
         </div>
 
@@ -345,11 +345,11 @@
         <div class="linha">
           <div class="coluna media">
             <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" />
+            <input type="tel" id="contato" name="telefone" maxlength="14"/>
           </div>
           <div class="coluna media">
             <label for="celular">Celular: <span class="required">*</span></label>
-            <input type="tel" id="celular" name="celular" required />
+            <input type="tel" id="contato" name="celular" maxlength="15" required />
           </div>
         </div>
 
@@ -438,6 +438,27 @@ data.addEventListener('input', function () {
   }
 
   data.value = valor;
+});
+
+    const telefone = document.getElementById('contato');
+
+telefone.addEventListener('input', function () {
+  let valor = telefone.value;
+
+  // Remove tudo que não for número
+  valor = valor.replace(/\D/g, '');
+
+  // Formata (xx) xxxxx-xxxx ou (xx) xxxx-xxxx
+  if (valor.length > 2) {
+    valor = valor.replace(/^(\d{2})(\d)/, '($1) $2');
+  }
+  if (valor.length > 7) {
+    valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
+  } else if (valor.length > 6) {
+    valor = valor.replace(/(\d{4})(\d)/, '$1-$2');
+  }
+
+  telefone.value = valor;
 });
   </script>
   
