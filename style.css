@@ -1,0 +1,305 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fbfbfc;
+  color: #212529;
+  line-height: 1.4;
+}
+
+#Topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 900px;
+  margin: 1rem auto 2rem auto;
+
+}
+
+.logo-wrapper img {
+  height: 110px;
+}
+
+.botao-candidato {
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  border: 1.5px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.botao-candidato a{
+  color: white;
+  text-decoration: none;
+  margin-top: 0px;
+}
+.botao-candidato img{
+  position: relative;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  border-radius: 40px;
+}
+
+.fundo-cadastro {
+  
+  position: relative;
+  padding: 0 1rem; 
+}
+
+.fundo-cadastro::before {
+  background: #035b8b url(https://static-cdn.selecao.net.br/static/candidatos/img/menubg.png) top left repeat-x !important;
+  content: "";
+  overflow: hidden;
+  position: absolute;
+  top: 35px
+  ; 
+  left: 0;
+  width: 100%;
+max-width: 100%;
+  height: 15%; 
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center top; 
+  background-size: 150px auto;     
+  position: relative;
+  
+}
+
+.escola-tecnica {
+float: left;
+padding: 0px 5px 40px 84px;
+font-weight: bold;
+width: 280px;
+position: absolute;
+margin: 0 0 0 90px;
+font-family: 'Exo 2';
+font-size: 19px;
+}
+
+
+.titulo-cadastro {
+  
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+  font-size: 38px;
+  letter-spacing: 0.05em;
+  color:#333;
+}
+.rg1234 {
+  text-align: left;
+  background-color: #eff0f1ab;
+margin: 10px;
+padding: 15px;
+  }
+.dados_pessoais {
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+font-size: 1rem;
+background-color: #eff0f1ab;
+margin: 10px;
+padding: 15px;
+   }
+.caixa {
+  background-color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+  border-radius: 14px;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+  border-top: #000000;
+  }
+  .Miolo {
+    border-top: 5px solid #023062;
+    margin: 0 auto;
+   width: 56rem;
+}
+
+.limite {
+  max-width: 390px;
+  }
+.required {
+  color: #d32f2f;
+}
+
+.cabecalho-interno {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.cabecalho-interno h1 {
+  font-size: 2.1rem;
+  color: #000000;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  text-align: left;
+}
+
+.cabecalho-interno h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000000;
+  padding-bottom: 0.25rem;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+/* LAYOUT DE CAMPOS */
+.linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.coluna {
+  flex: 1;
+  min-width: 260px;
+}
+
+.coluna.pequena {
+  flex: 0.8;
+  min-width: 140px;
+}
+
+.coluna.media {
+  flex: 1.2;
+  min-width: 230px;
+}
+
+.coluna.grande {
+  flex: 2;
+  min-width: 320px;
+}
+
+/* CAMPOS */
+label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  color: #575555;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-size: 1rem;
+  border: 1.8px solid #b0c4de;
+  border-radius: 6px;
+  background-color: #f8faff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+input:focus,
+select:focus {
+  background-color: #fff;
+  border-color: #000000;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 95, 166, 0.4);
+}
+
+
+
+/* BOTÕES */
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 700;
+}
+
+button[type="submit"] {
+  background-color: green;
+  margin-left: 0.8rem;
+  
+}
+
+button[type="reset"] {
+  background-color: white;
+ color:#0ea1ef;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+/* RODAPÉ */
+.inicio {
+  margin: 0px 850px 40px 0px;
+ 
+  }
+.inicio a {
+  color: #0ea1ef;
+  text-decoration: none;
+  }
+  .inicio a:hover {
+    text-decoration: underline;
+    }
+
+footer {
+  text-align: center;
+  margin-top: 3.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer hr {
+  margin-bottom: 1rem;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 768px) {
+  .linha {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .coluna,
+  .coluna.grande,
+  .coluna.media,
+  .coluna.pequena {
+    width: 100%;
+  }
+
+  .cabecalho-interno h1 {
+    font-size: 1.6rem;
+  }
+
+  .cabecalho-interno h2 {
+    font-size: 1.1rem;
+  }
+
+  .logo-wrapper img {
+    height: 45px;
+  }
+
+  .botao-candidato {
+    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .caixa {
+    padding: 2rem 1.5rem;
+}
+}
