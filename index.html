@@ -406,6 +406,16 @@
   </footer>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      
+      Inputmask ("999.999.999-99").mask(document.getElementById("cpf"));
+Inputmask ("99/99/9999").mask(document.getElementById("data_nascimento"));
+Inputmask ("999999999").mask(document.getElementById("numero_rg"));
+Inputmask ("99999-999").mask(document.getElementById("cep"));
+Inputmask ("99999").mask(document.getElementById("numero_casa"));
+Inputmask ("(99) 9999-9999").mask(document.getElementById("telefone"));
+Inputmask ("(99) 99999-9999").mask(document.getElementById("celular"));
+Inputmask ("999.999.999-99").mask(document.getElementById("cpf_do_representante_legal"));
+      
     const estadoSelect = document.getElementById("estado");
     const cidadeSelect = document.getElementById("cidade");
 
