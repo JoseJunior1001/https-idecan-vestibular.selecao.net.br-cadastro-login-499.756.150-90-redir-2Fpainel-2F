@@ -422,7 +422,7 @@
 
         cpf.value = valor;
       });
-    });
+  
 
       const data = document.getElementById('data_nascimento');
 
@@ -438,30 +438,32 @@ data.addEventListener('input', function () {
   }
 
   data.value = valor;
-});
-    });
-
-   const telefone = document.getElementById('telefone');
-
-telefone.addEventListener('input', function () {
-  let valor = telefone.value;
-
-  valor = valor.replace(/\D/g, '');
-
-  if (valor.length > 2) {
-    valor = valor.replace(/^(\d{2})(\d)/, '($1) $2');
-  }
-
-  if (valor.length > 9) {
-    valor = valor.replace(/(\d{4})(\d{4})$/, '$1-$2');
-  }
-
-  telefone.value = valor;
-
   });
-    });
-document.addEventListener('DOMContentLoaded', function () {
-  const telefone = document.getElementById('celular');
+
+
+  const telefone = document.getElementById('telefone');
+
+  telefone.addEventListener('input', function () {
+    let valor = telefone.value;
+
+    // Remove tudo que não for número
+    valor = valor.replace(/\D/g, '');
+
+    // Limita a 10 dígitos (2 DDD + 8 fixo)
+    valor = valor.substring(0, 10);
+
+    // Formata: (11) 2345-6789
+    if (valor.length >= 2) {
+      valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
+    }
+    if (valor.length >= 6) {
+      valor = valor.replace(/(\d{4})(\d{4})$/, '$1-$2');
+    }
+
+    telefone.value = valor;
+  });
+
+        const telefone = document.getElementById('telefone');
 
   telefone.addEventListener('input', function () {
     let valor = telefone.value;
@@ -483,6 +485,10 @@ document.addEventListener('DOMContentLoaded', function () {
     telefone.value = valor;
   });
 });
+
+
+
+   
   </script>
   
   <script>
