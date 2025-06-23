@@ -401,96 +401,80 @@
     <p style="margin-bottom: 15px; font-size: 12px;">© ESCOLA TÉCNICA - ETEC</p>
   </footer>
 
-  <script>
-    // Espera a página carregar completamente
-    window.addEventListener('DOMContentLoaded', function () {
-      const cpf = document.getElementById('cpf');
-
-      cpf.addEventListener('input', function () {
-        let valor = cpf.value;
-        valor = valor.replace(/\D/g, '');
-
-        if (valor.length > 3) {
-          valor = valor.replace(/^(\d{3})(\d)/, '$1.$2');
-        }
-        if (valor.length > 6) {
-          valor = valor.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
-        }
-        if (valor.length > 9) {
-          valor = valor.replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
-        }
-
-        cpf.value = valor;
-      });
-       });
   
+  <script>
+ <script>
+  // Espera a página carregar completamente
+  document.addEventListener('DOMContentLoaded', function () {
+    // Máscara para CPF
+    const cpf = document.getElementById('cpf');
+    cpf.addEventListener('input', function () {
+      let valor = cpf.value;
+      valor = valor.replace(/\D/g, '');
 
-      const data = document.getElementById('data_nascimento');
+      if (valor.length > 3) {
+        valor = valor.replace(/^(\d{3})(\d)/, '$1.$2');
+      }
+      if (valor.length > 6) {
+        valor = valor.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+      }
+      if (valor.length > 9) {
+        valor = valor.replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
+      }
 
-data.addEventListener('input', function () {
-  let valor = data.value;
-  valor = valor.replace(/\D/g, '');
+      cpf.value = valor;
+    });
 
-  if (valor.length > 2) {
-    valor = valor.replace(/^(\d{2})(\d)/, '$1/$2');
-  }
-  if (valor.length > 4) {
-    valor = valor.replace(/^(\d{2})\/(\d{2})(\d)/, '$1/$2/$3');
-  }
+    // Máscara para Data de Nascimento
+    const data = document.getElementById('data_nascimento');
+    data.addEventListener('input', function () {
+      let valor = data.value;
+      valor = valor.replace(/\D/g, '');
 
-  data.value = valor;
+      if (valor.length > 2) {
+        valor = valor.replace(/^(\d{2})(\d)/, '$1/$2');
+      }
+      if (valor.length > 4) {
+        valor = valor.replace(/^(\d{2})\/(\d{2})(\d)/, '$1/$2/$3');
+      }
+
+      data.value = valor;
+    });
+
+    // Máscara para Telefone Fixo
+    const telefone = document.getElementById('telefone');
+    telefone.addEventListener('input', function () {
+      let valor = telefone.value.replace(/\D/g, '');
+      valor = valor.substring(0, 10);
+
+      if (valor.length >= 2) {
+        valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
+      }
+      if (valor.length >= 6) {
+        valor = valor.replace(/(\d{4})(\d)/, '$1-$2');
+      }
+
+      telefone.value = valor;
+    });
+
+    // Máscara para Celular
+    const celular = document.getElementById('celular');
+    celular.addEventListener('input', function () {
+      let valor = celular.value.replace(/\D/g, '');
+      valor = valor.substring(0, 11);
+
+      if (valor.length >= 2) {
+        valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
+      }
+      if (valor.length >= 7) {
+        valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
+      }
+
+      celular.value = valor;
+    });
   });
-
-
-  const telefone = document.getElementById('telefone');
-
-  telefone.addEventListener('input', function () {
-    let valor = telefone.value;
-
-    // Remove tudo que não for número
-    valor = valor.replace(/\D/g, '');
-
-    // Limita a 10 dígitos (2 DDD + 8 fixo)
-    valor = valor.substring(0, 10);
-
-    // Formata: (11) 2345-6789
-    if (valor.length >= 2) {
-      valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
-    }
-    if (valor.length >= 6) {
-      valor = valor.replace(/(\d{4})(\d{4})$/, '$1-$2');
-    }
-
-    telefone.value = valor;
-  });
-
-        const telefone = document.getElementById('telefone');
-
-  telefone.addEventListener('input', function () {
-    let valor = telefone.value;
-
-    // Remove tudo que não for número
-    valor = valor.replace(/\D/g, '');
-
-    // Limita a 11 dígitos (2 DDD + 9 celular)
-    valor = valor.substring(0, 11);
-
-    // Formata: (11) 91234-5678
-    if (valor.length >= 2) {
-      valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
-    }
-    if (valor.length >= 7) {
-      valor = valor.replace(/(\d{5})(\d{4})$/, '$1-$2');
-    }
-
-    telefone.value = valor;
-  });
-});
-
-
-
-   
   </script>
+
   
   <script>
     document.addEventListener("DOMContentLoaded", function() {
