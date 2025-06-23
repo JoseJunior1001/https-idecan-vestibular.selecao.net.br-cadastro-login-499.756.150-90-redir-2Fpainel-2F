@@ -1,11 +1,9 @@
-Char, a única coisa que quero ajeitar são as máscaras 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Escola Técnica - Etec</title></title>
+  <title>Escola Técnica - Etec</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,7 +217,7 @@ Char, a única coisa que quero ajeitar são as máscaras
             <label for="escolaridade">Escolaridade: <span class="required">*</span></label>
             <select id="escolaridade" name="escolaridade" required>
               <option value="" disabled selected>Selecione</option>
-  <option value="opcao2">Nenhuma escolariedade</option>
+  <option value="opcao2">Nenhuma escolaridade</option>
   <option value="opcao3">Elementar</option>
   <option value="opcao4">Fundamental Incompleto</option>
   <option value="opcao5">Ensino Fundamental</option>
@@ -404,8 +402,9 @@ Char, a única coisa que quero ajeitar são as máscaras
 
     <p style="margin-bottom: 15px; font-size: 12px;">© ESCOLA TÉCNICA - ETEC</p>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/jquery.inputmask.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -435,7 +434,7 @@ Char, a única coisa que quero ajeitar são as máscaras
         cidadeSelect.disabled = true;
 
         try {
-           const response = await fetch(https://brasilapi.com.br/api/ibge/municipios/v1/${uf});
+           const response = await fetch(`https://brasilapi.com.br/api/ibge/municipios/v1/${uf}`);
             const cidades = await response.json();
             
             cidadeSelect.innerHTML = '<option value="">Selecione uma cidade</option>';
@@ -445,7 +444,7 @@ Char, a única coisa que quero ajeitar são as máscaras
             
         } catch (error) {
             try {
-                const fallback = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios');
+                const fallback = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`);
                 const dados = await fallback.json();
                 
                 cidadeSelect.innerHTML = '<option value="">Selecione uma cidade</option>';
