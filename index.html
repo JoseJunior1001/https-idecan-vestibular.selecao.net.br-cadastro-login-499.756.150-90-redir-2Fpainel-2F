@@ -193,12 +193,7 @@
             </select>
           </div>
         </div>
-        <div id="descricao-caixa" style="display: none; margin-top: 10px">
-          <label for="descricao">Descrição:</label>
-          <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Descreva Aqui..."></textarea>
-        </div>
-
-        
+    
         <div class="cabecalho-interno">
           <div class="dados_pessoais">
           <h2>DADOS ADICIONAIS</h2>
@@ -404,21 +399,7 @@
 </div>
     <p style="margin-bottom: 15px; font-size: 12px;">© ESCOLA TÉCNICA - ETEC</p>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-            const select = document.getElemetbyId('deficiencia');
-            const box = document.getElemetbyId('descricao-caixa');
-
-            select.addEventListener("change", () =>{
-            const valor = select.value
-            if ( valor !='' && valor != 'opcao1') {
-            box.style.display = 'block'
-            } else {
-            box.style.display = 'none'
-            }
-            });
-  </script>
+  
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     const cpf = document.getElementById('cpf');
