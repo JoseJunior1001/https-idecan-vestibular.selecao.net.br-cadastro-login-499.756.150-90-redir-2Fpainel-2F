@@ -193,7 +193,7 @@
             </select>
           </div>
         </div>
-        <div id="descricao-caixa" style:"display=none; margin-top: 10px">
+        <div id="descricao-caixa" style="display: none; margin-top: 10px">
           <label for="descricao">Descrição:</label>
           <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Descreva Aqui..."></textarea>
         </div>
@@ -406,7 +406,8 @@
   </footer>
 
   <script>
-            const select = document.getElemetbyId('descricao');
+    document.addEventListener("DOMContentLoaded", function () {
+            const select = document.getElemetbyId('deficiencia');
             const box = document.getElemetbyId('descricao-caixa');
 
             select.addEventListener("change", () =>{
