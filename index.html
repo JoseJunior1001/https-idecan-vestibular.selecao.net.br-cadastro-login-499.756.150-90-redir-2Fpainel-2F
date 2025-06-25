@@ -264,7 +264,7 @@
           </div>
           <div class="coluna">
             <label for="cpf_do_representante_legal">CPF do Representante Legal:</label>
-            <input type="text" id="cpf" name="cpf_do_representante_legal" />
+            <input type="text" id="cpf_representante" name="cpf_do_representante_legal" />
           </div>
         </div>
 
@@ -436,6 +436,24 @@
       }
 
       cpf.value = valor;
+    });
+
+        const cpf_representante = document.getElementById('cpf_representante');
+    cpf.addEventListener('input', function () {
+      let valor = cpf_representante.value;
+      valor = valor.replace(/\D/g, '');
+
+      if (valor.length > 3) {
+        valor = valor.replace(/^(\d{3})(\d)/, '$1.$2');
+      }
+      if (valor.length > 6) {
+        valor = valor.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+      }
+      if (valor.length > 9) {
+        valor = valor.replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
+      }
+
+      cpf_representante.value = valor;
     });
 
     const data = document.getElementById('data_nascimento');
