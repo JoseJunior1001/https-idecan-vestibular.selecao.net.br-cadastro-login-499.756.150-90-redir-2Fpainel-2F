@@ -193,8 +193,12 @@
             </select>
           </div>
         </div>
+        <div id="decricao-caixa" style:"display=none; margin-top: 10px">
+          <label for="descricao">Descrição:</label>
+          <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Descreva Aqui...">
+        </div>
 
-        <!-- Dados Adicionais -->
+        
         <div class="cabecalho-interno">
           <div class="dados_pessoais">
           <h2>DADOS ADICIONAIS</h2>
@@ -401,11 +405,21 @@
     <p style="margin-bottom: 15px; font-size: 12px;">© ESCOLA TÉCNICA - ETEC</p>
   </footer>
 
-  
   <script>
-  // Espera a página carregar completamente
+            const select = document.getElemetbyId('descricao');
+            const box = document.getElemetbyId('descricao-caixa');
+
+            select.addEventListener("change", () =>{
+            const valor = select.value
+            if ( valor !='' && valor != 'opcao1') {
+            box.style.display = 'block'
+            } else {
+            box.style.display = 'none'
+            }
+            });
+  </script>
+  <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Máscara para CPF
     const cpf = document.getElementById('cpf');
     cpf.addEventListener('input', function () {
       let valor = cpf.value;
@@ -424,7 +438,6 @@
       cpf.value = valor;
     });
 
-    // Máscara para Data de Nascimento
     const data = document.getElementById('data_nascimento');
     data.addEventListener('input', function () {
       let valor = data.value;
@@ -439,8 +452,7 @@
 
       data.value = valor;
     });
-
-    // Máscara para Telefone Fixo
+            
     const telefone = document.getElementById('telefone');
     telefone.addEventListener('input', function () {
       let valor = telefone.value.replace(/\D/g, '');
@@ -456,7 +468,6 @@
       telefone.value = valor;
     });
 
-    // Máscara para Celular
     const celular = document.getElementById('celular');
     celular.addEventListener('input', function () {
       let valor = celular.value.replace(/\D/g, '');
